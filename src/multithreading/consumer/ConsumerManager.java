@@ -8,7 +8,7 @@ public class ConsumerManager {
         if (consumerCount > 0 & consumerCount <= THRESHOLD) {
             this.consumerCount = consumerCount;
         } else {
-            System.out.println(String.format("com.huawei.demo.consumer count out of bound:%d", consumerCount));
+            System.out.println(String.format("consumer count out of bound:%d", consumerCount));
             this.consumerCount = 1;
         }
     }

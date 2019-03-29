@@ -7,7 +7,7 @@ public class ProducerManager {
         if (producerCnt > 0 & producerCnt <= THRESHOLD) {
             this.producerCnt = producerCnt;
         } else {
-            System.out.println(String.format("com.huawei.demo.producer count out of bound:%d", producerCnt));
+            System.out.println(String.format("producer count out of bound:%d", producerCnt));
             this.producerCnt = 1;
         }
     }

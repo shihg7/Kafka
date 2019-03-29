@@ -8,7 +8,7 @@ import java.util.Properties;
 
 public class DemoProducer implements Runnable {
     private static Properties props;
-    public static final String TOPIC = "wxymsg";
+    public static final String TOPIC = "msg";
     private static final int REQUESTS = 10000;
     private int id;
 
