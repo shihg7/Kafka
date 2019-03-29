@@ -29,17 +29,17 @@ public class ConsumerDemo {
          */
         properties.put("auto.offset.reset", "earliest");
 
-       /**
-        * 该属性指定了消费者在被认为死亡之前可以与服务器断开连接的时间，默认是 3s。如果消费者没有在
-        * session.timeout.ms 指定的时间内发送心跳给群组协调器，就被认为已经死亡，协调器就会触发再均
-        * 衡，把它的分区分配给群组里的其他消费者。该属性与 heartbeat.interval.ms 紧密相 关。
-        * heartbeat.interval.ms 指定了 poll() 方法向协调器发送心跳的频率，session.timeout.ms
-        * 则指定了消费者可以多久不发送心跳。所以，一般需要同时修改这两个属性，heartbeat.interval.ms
-        * 必须比 session.timeout.ms 小，一般是 session.timeout.ms 的三分之一。如果 session.timeout.ms
-        * 是 3s，那么 heartbeat.interval.ms 应该是 1s。把session.timeout.ms 值设得比默认值小，
-        * 可以更快地检测和恢复崩溃的节点，不过长时间的轮询或垃圾收集可能导致非预期的再均衡。
-        * 把该属性的值设置得大一些，可以减少意外的再均衡，不过检测节点崩溃需要更长的时间。
-        */
+        /**
+         * 该属性指定了消费者在被认为死亡之前可以与服务器断开连接的时间，默认是 3s。如果消费者没有在
+         * session.timeout.ms 指定的时间内发送心跳给群组协调器，就被认为已经死亡，协调器就会触发再均
+         * 衡，把它的分区分配给群组里的其他消费者。该属性与 heartbeat.interval.ms 紧密相 关。
+         * heartbeat.interval.ms 指定了 poll() 方法向协调器发送心跳的频率，session.timeout.ms
+         * 则指定了消费者可以多久不发送心跳。所以，一般需要同时修改这两个属性，heartbeat.interval.ms
+         * 必须比 session.timeout.ms 小，一般是 session.timeout.ms 的三分之一。如果 session.timeout.ms
+         * 是 3s，那么 heartbeat.interval.ms 应该是 1s。把session.timeout.ms 值设得比默认值小，
+         * 可以更快地检测和恢复崩溃的节点，不过长时间的轮询或垃圾收集可能导致非预期的再均衡。
+         * 把该属性的值设置得大一些，可以减少意外的再均衡，不过检测节点崩溃需要更长的时间。
+         */
         properties.put("session.timeout.ms", "30000");
 
 
