@@ -18,6 +18,6 @@ public class ConsumerManager {
             Thread thread = new Thread(new DemoConsumer());
             thread.start();
         }
-        System.out.println("All com.huawei.demo.consumer threads started");
+        System.out.println("All consumer threads started");
     }
 }
