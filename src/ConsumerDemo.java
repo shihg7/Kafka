@@ -2,6 +2,7 @@ import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
 
+import java.time.Duration;
 import java.util.Arrays;
 import java.util.Properties;
 
@@ -53,7 +54,7 @@ public class ConsumerDemo {
         KafkaConsumer<String, String> kafkaConsumer = new KafkaConsumer<>(properties);
         kafkaConsumer.subscribe(Arrays.asList("test1"));
         while (true) {
-            ConsumerRecords<String, String> records = kafkaConsumer.poll(100);//100是超时时间
+            ConsumerRecords<String, String> records = kafkaConsumer.poll(Duration.ofMillis(100));//100是超时时间
             for (ConsumerRecord<String, String> record : records) {
                 System.out.printf("offset = %d, value = %s", record.offset(), record.value());
                 System.out.println();
